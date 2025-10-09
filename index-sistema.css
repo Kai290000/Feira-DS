@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root {
---rosinha: #caa8f5ff;
---azul-claro: #9984d4ff;
---roxo: #592e83ff;
---roxo-escuro: #230c33ff;
+--verde-branco: #a1cca5ff;
+--verde-claro: #8fb996ff;
+--verde: #709775ff;
+--verde-escuro: #415d43ff;
   --title: "SUSE Mono", sans-serif;
   --text: "Lato", sans-serif;
 }
