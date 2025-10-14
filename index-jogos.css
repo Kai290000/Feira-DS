@@ -7,3 +7,11 @@
   --title: "SUSE Mono", sans-serif;
   --text: "Lato", sans-serif;
 }
+body {
+    background-color: var(--branco-esverdeado);
+    font-family: var(--text);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
