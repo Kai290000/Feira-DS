@@ -9,9 +9,24 @@
 }
 body {
     background-color: var(--rosinha);
-    font-family: var(--text);
     margin: 0;
     padding: 0;
     align-items: center;
     justify-content: center;
+}
+h1 {
+  font-family: var(--title);
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+p {
+  font-family: var(--text);
+  font-size: 17px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

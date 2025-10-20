@@ -9,9 +9,14 @@
 }
 body {
     background-color: var(--branco-esverdeado);
-    font-family: var(--text);
     margin: 0;
     padding: 0;
     align-items: center;
     justify-content: center;
+}
+h1 {
+  font-family: var(--title);
+}
+p {
+  font-family: var(--text);
 }
