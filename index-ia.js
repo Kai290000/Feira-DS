@@ -1,2 +1,1 @@
-case
-break
+const memoriasNazuna{}; 
