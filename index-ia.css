@@ -1,1 +1,237 @@
-@import
+/* Variáveis de Cores */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ff4500; /* Laranja forte */
+    --soft-orange: #ff6a00;
+    --font-family: 'Poppins', sans-serif; /* Use uma fonte moderna */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    min-height: 100vh;
+    display: flex; /* Para centralizar o conteúdo principal verticalmente */
+    flex-direction: column;
+}
+
+/* -------------------- CABEÇALHO (HEADER) -------------------- */
+.header {
+    display: flex;
+    justify-content: center; /* Centraliza a navegação */
+    padding: 20px 50px;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura do conteúdo, se desejar */
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--soft-orange);
+}
+
+.social-icons {
+    position: absolute;
+    right: 50px; /* Alinha os ícones à direita da tela */
+    top: 20px;
+}
+
+/* -------------------- LAYOUT PRINCIPAL (MAIN) -------------------- */
+.main-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto; /* Centraliza o conteúdo horizontal e verticalmente */
+    padding: 50px;
+}
+
+.left-section {
+    flex: 1; /* Ocupa cerca de 1/3 do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.right-section {
+    flex: 2; /* Ocupa cerca de 2/3 do espaço */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Alinhamento de texto na seção direita */
+    text-align: left;
+}
+
+.right-section h2 {
+    font-size: 3em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.right-section p {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* -------------------- CARTÃO (CARD) -------------------- */
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #111; /* Fundo levemente mais claro para o card */
+    padding: 10px;
+    border-radius: 10px;
+    
+    /* O efeito de brilho em volta do cartão */
+    box-shadow: 
+        0 0 15px rgba(255, 69, 0, 0.4), /* Brilho interno suave */
+        0 0 40px rgba(255, 69, 0, 0.2); /* Brilho externo maior */
+    
+    /* Estilo de perspectiva sutil, se desejar */
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.card-image-bg {
+    /* Simula a imagem do Asta */
+    background-image: url('caminho/para/sua/imagem-asta.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.8) contrast(1.2); /* Deixa mais escuro e vibrante */
+    border-radius: 8px;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 2.5em;
+    color: var(--accent-color); /* Título em laranja */
+    font-weight: 700;
+}
+
+.card-subtitle {
+    font-size: 1em;
+    color: #aaa;
+}
+
+
+/* -------------------- BOTÕES -------------------- */
+.buttons-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Texto escuro no botão primário */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+}
+
+.btn-primary:hover {
+    background-color: var(--soft-orange);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.8);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color); /* Texto laranja no botão secundário */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 69, 0, 0.1);
+    color: var(--text-color);
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Fica atrás de todo o conteúdo */
+}
+
+/* Exemplo de partícula (triângulo) */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid rgba(255, 69, 0, 0.3); /* Triângulo laranja semi-transparente */
+    transform: rotate(45deg);
+}
+
+/* Exemplo de partícula (ponto) */
+.background-container::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 165, 0, 0.4);
+}
+
+/* -------------------- CARTÃO (CARD) -------------------- */
+/* ... (outras regras do .card) ... */
+
+.card-image-bg {
+    /* **ATUALIZADO PARA USAR O SEU LINK** */
+    background-image: url('https://blackstorage.store/midia/1761833709054.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    
+    /* Você pode manter ou ajustar os filtros, se quiser o efeito escurecido/vibrante */
+    filter: brightness(0.9) contrast(1.1); 
+    
+    border-radius: 8px;
+}
