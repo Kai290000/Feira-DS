@@ -252,3 +252,45 @@ body {
     border-radius: 50%;
     background-color: rgba(255, 165, 0, 0.4);
 }
+
+/* --- Classes de Transição/Visibilidade --- */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    display: flex; /* Para que os botões fiquem lado a lado */
+    opacity: 1;
+}
+
+/* --- Estilo para o Container das Opções --- */
+.options-container {
+    gap: 15px; /* Espaçamento entre os novos botões */
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Novo Botão Terciário (WhatsApp) --- */
+.btn-tertiary {
+    background-color: #25D366; /* Cor Verde WhatsApp */
+    color: var(--bg-color); 
+    border-color: #25D366;
+    padding: 15px 25px;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+}
+
+.btn-tertiary:hover {
+    background-color: #128C7E; /* Verde mais escuro no hover */
+    border-color: #128C7E;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+}
+
+/* Garante que o container principal se adapte ao novo layout */
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    /* Adicione flex-wrap para garantir que em telas menores os botões quebrem a linha */
+    flex-wrap: wrap; 
+}
