@@ -1,43 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root {
+--branco: rgb(209, 209, 209);
 --rosinha: #caa8f5ff;
---azul-claro: #9984d4ff;
+--azul-claro: rgb(50, 37, 88);
 --roxo: #592e83ff;
 --roxo-escuro: #230c33ff;
   --title: "SUSE Mono", sans-serif;
   --text: "Lato", sans-serif;
 }
 body {
-    background-color: var(--rosinha);
+    background-color: var(--roxo-escuro);
     margin: 0;
     padding: 0;
     align-items: center;
     justify-content: center;
 }
-.inicio {
+h1{
+  color: var(--branco);
   font-family: var(--title);
-  font-size: 37px;
+  font-size: 70px;
   margin: 0px;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.meio {
-  font-family: var(--title);
-  font-size: 37px;
-  margin: 0px;
-  padding: 0px;
-  justify-content: center;
-  text-align: center;
-}
-.fim {
-  font-family: var(--title);
-  font-size: 37px;
-  padding: 0px;
-  justify-content: center;
-  text-align: center;
-}
 p {
+  color: var(--branco);
   font-family: var(--text);
   font-size: 35px;
   padding-left: 25px;
@@ -48,4 +36,15 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.volta{
+  font-size: 18px;
+  font-family: var(--title);
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: 2px solid var(--branco);
+  padding: 13px 23px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 7px;
 }
