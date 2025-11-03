@@ -19,17 +19,17 @@ body {
     color: var(--text-color);
     font-family: var(--font-family);
     min-height: 100vh;
-    display: flex; /* Para centralizar o conteúdo principal verticalmente */
+    display: flex; 
     flex-direction: column;
 }
 
 /* -------------------- CABEÇALHO (HEADER) -------------------- */
 .header {
     display: flex;
-    justify-content: center; /* Centraliza a navegação */
+    justify-content: center; 
     padding: 20px 50px;
     width: 100%;
-    max-width: 1200px; /* Limita a largura do conteúdo, se desejar */
+    max-width: 1200px; 
     margin: 0 auto;
     position: relative;
 }
@@ -48,21 +48,53 @@ body {
 
 .social-icons {
     position: absolute;
-    right: 50px; /* Alinha os ícones à direita da tela */
+    right: 50px; 
     top: 20px;
+    display: flex;
+    gap: 15px; /* Espaçamento entre os ícones */
 }
+
+/* CSS de Placeholder para Ícone Social (WhatsApp) */
+.social-icons a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--accent-color); /* Fundo laranja */
+    text-decoration: none;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.social-icons a:hover {
+    background-color: var(--soft-orange);
+}
+
+/* Placeholder para o W do WhatsApp */
+.icon-whatsapp::after {
+    content: 'W'; /* Substitua pelo ícone real (SVG ou Font Awesome) */
+    color: var(--bg-color);
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Fim do CSS de Placeholder para Ícone Social */
+
 
 /* -------------------- LAYOUT PRINCIPAL (MAIN) -------------------- */
 .main-content {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    margin: auto; /* Centraliza o conteúdo horizontal e verticalmente */
+    margin: auto; 
     padding: 50px;
 }
 
 .left-section {
-    flex: 1; /* Ocupa cerca de 1/3 do espaço */
+    flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,11 +102,10 @@ body {
 }
 
 .right-section {
-    flex: 2; /* Ocupa cerca de 2/3 do espaço */
+    flex: 2; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Alinhamento de texto na seção direita */
     text-align: left;
 }
 
@@ -97,16 +128,15 @@ body {
     position: relative;
     width: 300px;
     height: 400px;
-    background-color: #111; /* Fundo levemente mais claro para o card */
+    background-color: #111; 
     padding: 10px;
     border-radius: 10px;
     
     /* O efeito de brilho em volta do cartão */
     box-shadow: 
-        0 0 15px rgba(255, 69, 0, 0.4), /* Brilho interno suave */
-        0 0 40px rgba(255, 69, 0, 0.2); /* Brilho externo maior */
+        0 0 15px rgba(255, 69, 0, 0.4), 
+        0 0 40px rgba(255, 69, 0, 0.2); 
     
-    /* Estilo de perspectiva sutil, se desejar */
     transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
     transition: transform 0.5s;
 }
@@ -116,13 +146,16 @@ body {
 }
 
 .card-image-bg {
-    /* Simula a imagem do Asta */
-    background-image: url('caminho/para/sua/imagem-asta.jpg');
+    /* **URL ATUALIZADO** */
+    background-image: url('https://blackstorage.store/midia/1762169502067.jpg');
+    
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100%;
-    filter: brightness(0.8) contrast(1.2); /* Deixa mais escuro e vibrante */
+    
+    filter: brightness(0.9) contrast(1.1); 
+    
     border-radius: 8px;
 }
 
@@ -135,7 +168,7 @@ body {
 
 .card-title {
     font-size: 2.5em;
-    color: var(--accent-color); /* Título em laranja */
+    color: var(--accent-color); 
     font-weight: 700;
 }
 
@@ -159,11 +192,13 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* Garante que links/botões se pareçam com botões */
+    text-align: center;
 }
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: var(--bg-color); /* Texto escuro no botão primário */
+    color: var(--bg-color); 
     box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
 }
 
@@ -174,7 +209,7 @@ body {
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--accent-color); /* Texto laranja no botão secundário */
+    color: var(--accent-color); 
 }
 
 .btn-secondary:hover {
@@ -189,7 +224,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Fica atrás de todo o conteúdo */
+    z-index: -1; 
 }
 
 /* Exemplo de partícula (triângulo) */
@@ -202,7 +237,7 @@ body {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 25px solid rgba(255, 69, 0, 0.3); /* Triângulo laranja semi-transparente */
+    border-bottom: 25px solid rgba(255, 69, 0, 0.3); 
     transform: rotate(45deg);
 }
 
@@ -216,22 +251,4 @@ body {
     height: 8px;
     border-radius: 50%;
     background-color: rgba(255, 165, 0, 0.4);
-}
-
-/* -------------------- CARTÃO (CARD) -------------------- */
-/* ... (outras regras do .card) ... */
-
-.card-image-bg {
-    /* **ATUALIZADO PARA USAR O SEU LINK** */
-    background-image: url('https://blackstorage.store/midia/1761833709054.jpg');
-    
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    
-    /* Você pode manter ou ajustar os filtros, se quiser o efeito escurecido/vibrante */
-    filter: brightness(0.9) contrast(1.1); 
-    
-    border-radius: 8px;
 }
