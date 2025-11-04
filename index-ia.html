@@ -8,60 +8,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="background-container">
+    
+    <div id="page-intro">
+        <div class="intro-text">NAZUNA IA</div>
     </div>
 
-    <header class="header">
-        <nav class="nav-links">
-            <a href="https://chat.whatsapp.com/J6kBrjQzL3bGxTQCoyWOq0?mode=wwt" target="_blank">Grupo de Suporte</a>
-            
-            <a href="#" id="link-painel-chat">Painel de Chat</a>
-            <a href="#" id="link-conta">Conta</a>
-        </nav>
-        <div class="social-icons">
-            <a href="https://wa.me/554599941804" target="_blank" class="icon-whatsapp" aria-label="WhatsApp"></a>
+    <div id="main-content-wrapper">
+
+        <div class="background-container">
+            <div class="particle bubble"></div>
+            <div class="particle triangle"></div>
+            <div class="particle bubble"></div>
+            <div class="particle triangle"></div>
+            <div class="particle bubble"></div>
         </div>
-    </header>
 
-    <main class="main-content">
-        <section class="left-section">
-            <div class="card">
-                <div class="card-image-bg"></div>
-                <div class="card-content">
-                    <h1 class="card-title">Nazuna</h1>
-                    <p class="card-subtitle">Olá, viajante.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="right-section">
-            <h2>A melhor IA para te ajudar nos estudos!</h2>
-            <p>Bem vindo a Nazuna IA. A melhor I.A para te ajudar nos seus trabalhos, para interagir e gerar imagens para você!</p>
-            
-            <div class="buttons-container">
-                <button class="btn btn-primary" id="btn-conversar-agora">🚀 Conversar Agora</button>
+        <header class="header">
+            <nav class="nav-links">
+                <a href="https://chat.whatsapp.com/J6kBrjQzL3bGxTQCoyWOq0?mode=wwt" target="_blank">Grupo de Suporte</a>
                 
-                <div class="options-container hidden" id="options-container">
+                <a href="#" id="link-painel-chat">Painel de Chat</a>
+                <a href="#" id="link-conta">Conta</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://wa.me/554599941804" target="_blank" class="icon-whatsapp" aria-label="WhatsApp"></a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="left-section">
+                <div class="card">
+                    <div class="card-image-bg"></div>
+                    <div class="card-content">
+                        <h1 class="card-title">Nazuna</h1>
+                        <p class="card-subtitle">Olá, viajante.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-section">
+                <h2>A melhor IA para te ajudar nos estudos!</h2>
+                <p>Bem vindo a Nazuna IA. A melhor I.A para te ajudar nos seus trabalhos, para interagir e gerar imagens para você!</p>
+                
+                <div class="buttons-container">
+                    <button class="btn btn-primary" id="btn-conversar-agora">🚀 Conversar Agora</button>
                     
-                    <a href="https://wa.me/5511987211313?text=Olá%20Nazuna%2C%20gostaria%20de%20iniciar%20uma%20conversa" 
-                       class="btn btn-tertiary" 
-                       target="_blank">
-                        <span style="font-size: 1.2em; margin-right: 5px;">📱</span> Conversar Via WhatsApp
+                    <div class="options-container hidden" id="options-container">
+                        
+                        <a href="https://wa.me/5511987211313?text=Olá%20Nazuna%2C%20gostaria%20de%20iniciar%20uma%20conversa" 
+                           class="btn btn-tertiary" 
+                           target="_blank">
+                            <span style="font-size: 1.2em; margin-right: 5px;">📱</span> Conversar Via WhatsApp
+                        </a>
+                        
+                        <button class="btn btn-primary" id="btn-chat-direto">💬 Conversar Diretamente (Site)</button>  
+                    </div>
+                    
+                    <a href="https://wa.me/554599941804?text=Olá%20Sanchez%2C%20gostaria%20de%20saber%20como%20usar%20a%20Nazuna%20da%20forma%20correta" 
+                       class="btn btn-secondary" 
+                       target="_blank"
+                       style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        Suporte WhatsApp
                     </a>
-                    
-                    <button class="btn btn-primary" id="btn-chat-direto">💬 Conversar Diretamente (Site)</button>  
                 </div>
-                
-                <a href="https://wa.me/554599941804?text=Olá%20Sanchez%2C%20gostaria%20de%20saber%20como%20usar%20a%20Nazuna%20da%20forma%20correta" 
-                   class="btn btn-secondary" 
-                   target="_blank"
-                   style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
-                    Suporte WhatsApp
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <script src="index-ia.js"></script>
+            </section>
+        </main>
+    </div> <script src="index-ia.js"></script>
 </body>
 </html>
