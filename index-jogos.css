@@ -25,7 +25,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #2b0526;
+  background-color: #230c33ff;
   color: #333;
 }
 
@@ -81,16 +81,17 @@ body {
 }
 
 #restart-button {
-  padding: 1px 2px;
-  font-size: 10em;
+  padding: 2px 13px;
+  font-size: 4em;
   cursor: pointer;
-  background-color: #2ecc71; /* Verde */
-  color: rgb(219, 31, 31);
+  background-color: #5f0052; /* Verde */
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 
 #restart-button:hover {
-  background-color: #00ff6a;
+  background-color: #ba51ac;
+  color: #d2d2d2;
 }
