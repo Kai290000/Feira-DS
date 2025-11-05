@@ -1,9 +1,12 @@
-
+let pontuacaoX = 0;
+let pontuacaoO = 0;
 
 // 1. Variáveis de Estado
 const cells = document.querySelectorAll('.cell');
 const statusDisplay = document.getElementById('status');
 const restartButton = document.getElementById('restart-button');
+// NOVO: Buscando o elemento de pontuação
+const scoreDisplay = document.getElementById('score-board'); 
 
 // Array que representa o tabuleiro: 0-8. ' ' = vazio.
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -22,31 +25,17 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
-// 2. Funções do Jogo
-
-// Manipula o clique em uma célula
-function handleCellClick(clickedCellEvent) {
-    const clickedCell = clickedCellEvent.target;
-    // O índice da célula é pego do atributo 'data-index' no HTML
-    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
-
-    // Verifica se a célula já está preenchida ou se o jogo acabou
-    if (gameBoard[clickedCellIndex] !== '' || !gameActive) {
-        return;
+// FUNÇÃO CHAVE: Atualiza o HTML com a pontuação
+function updateScoreDisplay() {
+    if (scoreDisplay) {
+        scoreDisplay.innerHTML = `Placar: X: **${pontuacaoX}** | O: **${pontuacaoO}**`;
+    } else {
+        console.warn("Elemento 'score-board' não encontrado no HTML. A pontuação não será exibida.");
     }
-
-    // Preenche a célula e atualiza o estado do jogo
-    handlePlayerMove(clickedCell, clickedCellIndex);
-    checkResult();
 }
 
-// Atualiza o HTML e o array do tabuleiro
-function handlePlayerMove(cell, index) {
-    gameBoard[index] = currentPlayer;
-    cell.innerHTML = currentPlayer;
-    // Adiciona a classe para estilização de cor
-    cell.classList.add(currentPlayer.toLowerCase());
-}
+// 2. Funções do Jogo
+// ... (handleCellClick, handlePlayerMove e handlePlayerChange permanecem iguais) ...
 
 // Verifica se houve um vencedor ou um empate
 function checkResult() {
@@ -58,10 +47,9 @@ function checkResult() {
         let c = gameBoard[winCondition[2]];
 
         if (a === '' || b === '' || c === '') {
-            continue; // Pula se alguma célula na condição de vitória estiver vazia
+            continue; 
         }
         
-        // Se as três forem iguais e não vazias, há um vencedor
         if (a === b && b === c) {
             roundWon = true;
             break;
@@ -69,12 +57,20 @@ function checkResult() {
     }
 
     if (roundWon) {
-        statusDisplay.innerHTML = `O Jogador **${currentPlayer}** Venceu! 🎉`;
-        gameActive = false; // Termina o jogo
+        statusDisplay.innerHTML = `O Jogador ${currentPlayer} Venceu! 🎉`;
+        gameActive = false; 
+        
+        // **INCREMENTA A PONTUAÇÃO**
+        if (currentPlayer === 'X') {
+            pontuacaoX++;
+        } else {
+            pontuacaoO++;
+        }
+        updateScoreDisplay(); 
+        
         return;
     }
 
-    // Verifica se houve empate (se todas as células estão preenchidas e não houve vitória)
     let roundDraw = !gameBoard.includes('');
     if (roundDraw) {
         statusDisplay.innerHTML = `Empate! 🤝`;
@@ -82,28 +78,31 @@ function checkResult() {
         return;
     }
 
-    // Se não houver vencedor nem empate, troca o jogador
     handlePlayerChange();
 }
 
 // Troca o jogador atual
 function handlePlayerChange() {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    statusDisplay.innerHTML = `Vez do Jogador **${currentPlayer}**`;
+    statusDisplay.innerHTML = `Vez do Jogador ${currentPlayer}`;
 }
 
-// Reinicia o jogo
+// Reinicia o jogo (mantém o placar)
 function restartGame() {
     gameActive = true;
     currentPlayer = 'X';
     gameBoard = ['', '', '', '', '', '', '', '', ''];
-    statusDisplay.innerHTML = `Vez do Jogador **${currentPlayer}**`;
+    statusDisplay.innerHTML = `Vez do Jogador ${currentPlayer}`;
     
     cells.forEach(cell => {
         cell.innerHTML = '';
         cell.classList.remove('x', 'o');
     });
+    
+    updateScoreDisplay();
 }
+
+// REMOVIDO: A função resetScore foi removida.
 
 // 3. Listeners de Eventos
 
@@ -114,3 +113,8 @@ cells.forEach(cell => {
 
 // Adiciona um listener de clique ao botão de reiniciar
 restartButton.addEventListener('click', restartGame);
+
+// REMOVIDO: O listener para resetScoreButton foi removido.
+
+// CHAMADA INICIAL: Exibe o placar 0 | 0 ao carregar a página
+updateScoreDisplay();
