@@ -346,3 +346,118 @@ body {
     border-color: #128C7E;
     box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
 }
+
+/* -------------------- CHAT MODAL -------------------- */
+.chat-modal {
+    display: none; /* Começa oculto */
+    position: fixed;
+    z-index: 9990; /* Abaixo do loader de intro, mas acima do conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-modal.visible {
+    display: flex; /* Exibe o modal */
+}
+
+.chat-content {
+    background-color: #1a1a1a;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--accent-color);
+    width: 90%;
+    max-width: 600px;
+    height: 70vh; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.4); 
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--accent-color);
+}
+
+.chat-interface {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-display {
+    flex-grow: 1;
+    background-color: #222;
+    border-radius: 5px;
+    padding: 15px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para as mensagens no chat-display (opcional) */
+.user-message {
+    text-align: right;
+    color: #fff;
+    background-color: var(--accent-color);
+    padding: 8px 12px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.ia-message {
+    text-align: left;
+    color: #fff;
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 10px 10px 10px 0;
+    max-width: 80%;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: var(--text-color);
+    border-radius: 5px;
+    resize: none;
+    min-height: 40px;
+    font-family: var(--font-family);
+}
+
+.chat-input-area button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
