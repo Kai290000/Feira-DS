@@ -11,7 +11,18 @@
 
 <body>
 
-  <button class="volta">Voltar</button>
+  <button class="volta" id="volta">Voltar</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const botao = document.getElementById('volta');
+      const hub = "https://kai290000.github.io/HUB-Feira-DS/";
+
+      botao.addEventListener('click', function() {
+        window.location.href = hub;
+      });
+    });
+  </script>
 
     <h1>Como Surgiu o Software?</h1>
   <p>Os softwares surgiram a partir da necessidade de instruir os computadores, sendo os primeiros "programas"
