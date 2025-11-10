@@ -1,21 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffffff;
-  margin: 0;
-  padding-top: 50px;
-}
-
-.container {
-  background: rgb(255, 255, 255);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  text-align: center;
-}
-
 /* Estilização básica e do corpo */
 body {
   font-family: Arial, sans-serif;
@@ -25,26 +7,34 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #230c33ff;
-  color: #333;
+  background-color: #230c33ff; /* Fundo Roxo Escuro */
+  color: #ffffff; /* Cor do texto principal */
 }
 
 .container {
   text-align: center;
   padding: 20px;
-  background-color: #940280;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #940280; /* Fundo do Contêiner Roxo Médio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
   border-radius: 10px;
+  color: #ffffff; 
+}
+
+/* Estilização do Placar */
+#score-board {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* Estilização do tabuleiro (usando Grid) */
 .board {
   display: grid;
-  /* 3 colunas de tamanho igual (100px) */
-  grid-template-columns: repeat(3, 150px);
+  /* 3 colunas de tamanho igual */
+  grid-template-columns: repeat(3, 120px); 
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
-  margin: 50px auto;
+  margin: 20px auto;
   border: 3px solid #000000;
 }
 
@@ -54,7 +44,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
+  font-size: 4em; 
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -66,25 +56,25 @@ body {
 
 /* Estilos para o texto X e O */
 .cell.x {
-  color: #2f00ff; /* Vermelho */
+  color: #2f00ff; /* Azul */
 }
 
 .cell.o {
-  color: #ff0015; /* Azul */
+  color: #ff0015; /* Vermelho */
 }
 
 /* Estilização para o status e botão */
 #status {
   margin-bottom: 15px;
-  font-size: 2.2em;
+  font-size: 1.5em; 
   font-weight: bold;
 }
 
 #restart-button {
-  padding: 2px 13px;
-  font-size: 4em;
+  padding: 10px 15px; 
+  font-size: 1em;
   cursor: pointer;
-  background-color: #5f0052; /* Verde */
+  background-color: #5f0052;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
